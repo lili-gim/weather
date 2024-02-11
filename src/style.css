@@ -11,3 +11,22 @@ body {
   border-radius: 16px;
   font-family: "Roboto", sans-serif;
 }
+
+.search-form-input {
+  background-color: #f9f7fe;
+  border: none;
+  border-radius: 6px;
+  width: 80%;
+  padding: 15px 20px;
+  font-size: 16px;
+}
+
+.search-form-button {
+  background: #885df1;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 6px;
+  color: white;
+  font-size: 16px;
+  margin-left: 5px;
+}
