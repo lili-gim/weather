@@ -62,6 +62,26 @@ main {
   color: #f65282;
 }
 
+.weather-app-temperature-container {
+  display: flex;
+}
+
+.weather-app-temperature {
+  font-size: 88px;
+  font-weight: bold;
+  margin-left: 10px;
+}
+
+.weather-app-icon {
+  font-size: 44px;
+  margin-top: 22px;
+}
+
+.weather-app-unit {
+  font-size: 28px;
+  margin-top: 16px;
+}
+
 a {
   color: #885df1;
 }
