@@ -4,6 +4,9 @@ function updateTemperature(response) {
   temperatureElement.innerHTML = Math.round(temperature);
   let displayedCity = document.querySelector("#weather-app-city");
   displayedCity.innerHTML = response.data.city;
+  let iconElement = document.querySelector("#icon");
+
+  iconElement.innerHTML = `<img src="${response.data.condition.icon_url}" class="weather-app-icon"/>`;
 
   let weatherDescriptionElement = document.querySelector("#description");
   weatherDescriptionElement.innerHTML = response.data.condition.description;
@@ -37,12 +40,11 @@ function formatDate(date) {
   ];
   let day = days[date.getDay()];
 
-   if (minutes < 10) {
-    minutes = ´0${minutes}´;
+  if (minutes < 10) {
+    minutes = `0${minutes}`;
   }
+
   return `${day} ${hours}:${minutes}`;
-
-
 }
 
 function searchCity(city) {
