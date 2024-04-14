@@ -47,6 +47,8 @@ function formatDate(date) {
   return `${day} ${hours}:${minutes}`;
 }
 
+let forecast = document.querySelector("#forecast");
+
 function searchCity(city) {
   let apiKey = "c20161a98fff44a06b23236e2obd0t3b";
   let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
@@ -60,7 +62,40 @@ function showSearchedCity(event) {
   searchCity(enterCity.value);
 }
 
+function displayForecast() {
+  let days = ["Tue", "Wed", "Thu", "Fri", "Sat"];
+  let forecastHtml = "";
+  days.forEach(function (day) {
+    forecastHtml =
+      forecastHtml +
+      `
+  <div class="row">
+    <div class="col-2">
+      <div class="weather-forecast-date">${day}</div>
+
+      <img
+        src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/broken-clouds-day.png"
+        alt=""
+        width="36"
+        class="weather-forecast-icon"
+      />
+      <div class="weather-forecast-temperatures">
+        <span class="wether-forecast-temperature-max">
+          <strong>18°</strong>
+        </span>
+        <span class="wether-forecast-temperature-mim">12°</span>
+      </div>
+    </div>
+  </div>
+`;
+  });
+
+  let forecastElement = document.querySelector("#forecast");
+  forecastElement.innerHTML = forecastHtml;
+}
+
 let searchFormElement = document.querySelector("#search-form");
 searchFormElement.addEventListener("submit", showSearchedCity);
 
 searchCity("Berlin");
+displayForecast();
